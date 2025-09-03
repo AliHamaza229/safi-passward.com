@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <script defer src="/static/script.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Theme Switch -->
+<div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙 / ☀️</button>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+    <div class="navbar">
+        <h1>Beautiful Memories</h1>
+        <div class="nav-links">
+            {% if role in ['admin', 'superuser'] %}
+                <a href="{{ url_for('admin') }}">⚙️ Settings</a>
+            {% endif %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </div>
+
+    <div class="center-box">
+        <h2>Welcome, {{ username }} ({{ role }})</h2>
+        <p>Enjoy your beautiful session!</p>
+    </div>
+</body>
+</html>

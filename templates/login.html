@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - {{ role.capitalize() }}</title>
+    <script defer src="/static/script.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Login System</h1>
+    </header>
+<!-- Theme Switch -->
+<div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙 / ☀️</button>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login/admin">Admin</a>
+        <a href="/login/superuser">Superuser</a>
+        <a href="/login/user">User</a>
+    </nav>
+
+    <main>
+        <h2>Login as {{ role.capitalize() }}</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="post">
+            <label>Username:</label><br>
+            <input name="username" required><br>
+            <label>Password:</label><br>
+            <input name="password" type="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+        <a href="/">Back</a>
+    </main>
+</body>
+</html>

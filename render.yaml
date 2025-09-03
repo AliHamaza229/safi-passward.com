@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: safi-passwords
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: this_is_a_secure_random_flask_key
+        value: this_is_a_secure_random_flask_key

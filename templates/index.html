@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Role</title>
+    <script defer src="/static/script.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Role-Based Login System</h1>
+    </header>
+<!-- Theme Switch -->
+<div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙 / ☀️</button>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login/admin">Admin</a>
+        <a href="/login/superuser">Superuser</a>
+        <a href="/login/user">User</a>
+    </nav>
+
+    <main>
+        <img src="/static/login_image.jpg" alt="Login Illustration">
+        <h2>Select Role to Login</h2>
+        <a href="/login/admin">Login as Admin</a><br>
+        <a href="/login/superuser">Login as Superuser</a><br>
+        <a href="/login/user">Login as Regular User</a><br>
+    </main>
+</body>
+</html>

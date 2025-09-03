@@ -1,2 +1,2 @@
-# safi-passward.com
-use to store sensitive information
+# passward
+use to store passward

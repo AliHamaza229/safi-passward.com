@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <script defer src="/static/script.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>User Dashboard</h1>
+    </header>
+<!-- Theme Switch -->
+<div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙 / ☀️</button>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+    <nav>
+        <a href="/home">Home</a>
+        {% if role == 'admin' %}
+            <a href="/admin">Admin Panel</a>
+        {% endif %}
+        <a href="/change_password">Change Password</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <main>
+        <h2>Welcome, {{ username }} ({{ role }})</h2>
+    </main>
+</body>
+</html>

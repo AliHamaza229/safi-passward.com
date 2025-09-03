@@ -1,0 +1,10 @@
+{
+    "saf": {
+        "password": "scrypt:32768:8:1$jdmV74kJwKwL9b8L$739e39da2c4d2a35cfc4a241dfea7c47df812ff3c082c5b042f3ff42c5680ba79ca20d15ac8dd9eed6cd593f759cc12b72fe8ce831aacf4649af2b999821b4fb",
+        "role": "admin"
+    },
+    "safi": {
+        "password": "scrypt:32768:8:1$FgVjowY8VlpbeidQ$0fa23ae7f3498fc7f8eb11984d3113f85dc8238f91ac96614f04e20fabe43cd51568f7b345d9f929e406b535ddce3819fbb2a5cd6d7e5fd6072eb5edf252882d",
+        "role": "user"
+    }
+}

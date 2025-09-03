@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <script defer src="/static/script.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+    <!-- Theme Switch -->
+<div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙 / ☀️</button>
+</div>
+
+<!-- Toast Notifications -->
+<div id="toast-container"></div>
+
+
+    <nav>
+        <a href="/home">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <main>
+        {% if message %}
+            <p class="{{ 'success' if 'successfully' in message else 'error' }}">{{ message }}</p>
+        {% endif %}
+        <form method="post">
+            <label>Username:</label><br>
+            <input name="new_user" required><br>
+            <label>Password:</label><br>
+            <input name="new_pass" type="password" required><br>
+            <label>Role:</label><br>
+            <select name="new_role" required>
+                <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="superuser">Superuser</option>
+                <option value="user">Regular User</option>
+            </select><br><br>
+            <input type="submit" value="Create User">
+        </form>
+        <hr>
+        <h3>Existing Users:</h3>
+        <ul>
+            {% for username, info in users.items() %}
+                <li>{{ username }} ({{ info.role }})</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>
